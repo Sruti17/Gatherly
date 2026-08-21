@@ -1,0 +1,939 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		margin: 0;
+		background: #ffffff;
+		color: #111111;
+		font-family: Georgia, 'Times New Roman', serif;
+	}
+
+	button,
+	input {
+		font-family: Arial, sans-serif;
+	}
+}
+
+@layer components {
+	.gatherly-shell {
+		font-family: Arial, sans-serif;
+	}
+
+	.gatherly-hero {
+		min-height: 250px;
+		background:
+			radial-gradient(ellipse at 12% 30%, #ffffff 0 7%, transparent 8%),
+			radial-gradient(ellipse at 28% 80%, #ffffff 0 10%, transparent 11%),
+			radial-gradient(ellipse at 84% 35%, #ffffff 0 9%, transparent 10%),
+			linear-gradient(120deg, #ffb9dc 0%, #eec9ff 42%, #baf4ef 100%);
+		background-size: auto, auto, auto, 180% 180%;
+		animation: gatherly-sky 14s ease-in-out infinite alternate;
+	}
+
+	.gatherly-nav {
+		min-height: 74px;
+	}
+
+	.gatherly-logo {
+		font-family: Georgia, 'Times New Roman', serif;
+		font-size: 2.25rem;
+		font-weight: 900;
+		letter-spacing: -2px;
+		color: #7250cf;
+		text-shadow: 2px 2px 0 #c7a6f5, 0 0 10px #e7d8ff;
+	}
+
+	.gatherly-search {
+		border: 1px solid #d9d3e7;
+		border-radius: 999px;
+		background: #fff;
+		box-shadow: 0 2px 5px rgb(81 57 128 / 8%);
+	}
+
+	.location-select {
+		max-width: 6rem;
+		min-width: 4rem;
+		border: 0;
+		background: transparent;
+		padding: 0 0.1rem;
+		font-size: 0.75rem;
+		outline: none;
+	}
+
+	.location-select:disabled {
+		color: #a8a2b3;
+	}
+
+	.location-area-select {
+		max-width: 7rem;
+	}
+
+	.location-filters {
+		max-width: 24rem;
+	}
+
+	.gatherly-glow-button {
+		border: 2px solid #c3e9ff;
+		border-radius: 999px;
+		background: linear-gradient(100deg, #83eaff, #fff0ff 48%, #ffb8d9);
+		box-shadow: 0 0 5px #6de0ff, 0 0 13px #e3a9ff;
+		transition: transform 180ms ease, box-shadow 180ms ease;
+	}
+
+	.gatherly-glow-button:hover {
+		box-shadow: 0 0 9px #6de0ff, 0 0 22px #e3a9ff;
+	}
+
+	.gatherly-nav-icon,
+	.gatherly-create-event {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.35rem;
+		white-space: nowrap;
+		border-radius: 999px;
+		transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+	}
+
+	.gatherly-nav-icon {
+		padding: 0.55rem;
+		color: #57378e;
+	}
+
+	.gatherly-nav-icon:hover {
+		background: #f2eaff;
+		color: #341257;
+		transform: translateY(-2px);
+	}
+
+	.gatherly-create-event {
+		border: 1px solid #d6c4ff;
+		background: #f8f2ff;
+		padding: 0.55rem 0.75rem;
+		font-weight: 700;
+		color: #57378e;
+	}
+
+	.gatherly-create-event:hover {
+		background: #eadcff;
+		transform: translateY(-2px);
+	}
+
+	.create-event-choice {
+		border: 1px solid #e4e0ea;
+		border-radius: 999px;
+		background: #f1eff4;
+		padding: 0.7rem 1rem;
+		font-size: 0.8rem;
+		font-weight: 800;
+		color: #433850;
+		transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+	}
+
+	.create-event-choice:hover,
+	.create-event-choice-active {
+		background: #e7f7bf;
+		box-shadow: 0 4px 0 #c9df8e;
+		transform: translateY(-2px);
+	}
+
+	.create-event-label {
+		display: block;
+		font-size: 0.8rem;
+		font-weight: 800;
+		color: #433850;
+	}
+
+	.gatherly-profile-name {
+		max-width: 8rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		font-size: 0.8rem;
+		font-weight: 800;
+		color: #57378e;
+	}
+
+	.join-gang-input {
+		display: block;
+		width: 100%;
+		margin-top: 0.35rem;
+		border: 1px solid #d9ccec;
+		border-radius: 0.75rem;
+		padding: 0.65rem 0.8rem;
+		font-size: 0.875rem;
+		font-weight: 400;
+		outline: none;
+		transition: border-color 160ms ease, box-shadow 160ms ease;
+	}
+
+	.join-gang-input:focus {
+		border-color: #9364d2;
+		box-shadow: 0 0 0 3px rgb(185 148 239 / 22%);
+	}
+
+	.google-sign-in-button {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		gap: 0.6rem;
+		border: 1px solid #d9dcec;
+		border-radius: 0.75rem;
+		background: #ffffff;
+		padding: 0.7rem 1rem;
+		font-size: 0.875rem;
+		font-weight: 700;
+		color: #3f4350;
+		box-shadow: 0 2px 5px rgb(30 35 60 / 6%);
+		transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+	}
+
+	.google-sign-in-button:hover {
+		border-color: #b9a5e8;
+		box-shadow: 0 4px 12px rgb(114 80 207 / 14%);
+		transform: translateY(-1px);
+	}
+
+	.google-mark {
+		font-family: Arial, sans-serif;
+		display: inline-block;
+		font-size: 1.25rem;
+		font-weight: 900;
+		line-height: 1;
+		background: conic-gradient(from -35deg, #4285f4 0 25%, #34a853 25% 43%, #fbbc05 43% 63%, #ea4335 63% 80%, #4285f4 80% 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+	}
+
+	.gatherly-title {
+		color: #341257;
+		text-shadow: 1px 1px 0 #fff, 2px 2px 0 #f4a9df;
+	}
+
+	.gatherly-collage {
+		position: absolute;
+		z-index: 2;
+	}
+
+	.gatherly-sticker {
+		position: absolute;
+		border: 1px solid rgb(74 29 94 / 25%);
+		border-radius: 4px;
+		padding: 3px 6px;
+		font-size: 8px;
+		font-weight: 900;
+		white-space: nowrap;
+		box-shadow: 1px 2px 0 rgb(63 24 83 / 18%);
+	}
+
+	.gatherly-hero-emoji {
+		position: absolute;
+		z-index: 1;
+		font-size: 2rem;
+		color: #7b36a8;
+		filter: drop-shadow(1px 2px 0 rgb(95 40 131 / 18%));
+		animation: gatherly-float 3.2s ease-in-out infinite;
+		user-select: none;
+		pointer-events: none;
+	}
+
+	.gatherly-hero-emoji:nth-of-type(3n) {
+		animation-delay: -0.8s;
+	}
+
+	.gatherly-hero-emoji:nth-of-type(4n) {
+		animation-delay: -1.6s;
+	}
+
+	.gatherly-category-icon {
+		display: flex;
+		height: 2.4rem;
+		width: 2.4rem;
+		align-items: center;
+		justify-content: center;
+		border-radius: 999px;
+		background: linear-gradient(135deg, #f2e4ff, #e9d7f5);
+		font-size: 1.35rem;
+		box-shadow: inset 0 0 0 1px #eee0f8;
+	}
+
+	.gatherly-category-active {
+		background: linear-gradient(135deg, #c7fbff, #d8a9f1);
+		box-shadow: 0 0 9px #a8eff8;
+	}
+
+	.gatherly-free-badge {
+		border: 1px solid #aa7ed2;
+		border-radius: 999px;
+		background: #f7eaff;
+	}
+
+	@keyframes gatherly-sky {
+		from { background-position: 0 0, 0 0, 0 0, 0% 50%; }
+		to { background-position: 4% 3%, -3% 0, 2% -2%, 100% 50%; }
+	}
+
+	@keyframes gatherly-float {
+		0%, 100% { transform: translateY(0) rotate(-5deg); }
+		50% { transform: translateY(-8px) rotate(5deg); }
+	}
+
+	.gatherly-content {
+		width: 100%;
+		max-width: none;
+		margin-inline: 0;
+		padding-inline: clamp(1.25rem, 5vw, 5rem);
+	}
+
+	.gatherly-category-rail {
+		scrollbar-width: none;
+	}
+
+	.gatherly-category-rail::-webkit-scrollbar {
+		display: none;
+	}
+
+	.gatherly-event-card {
+		min-width: 0;
+		position: relative;
+		transform-style: preserve-3d;
+		box-shadow: 0 12px 0 -5px rgb(167 126 224 / 35%), 0 18px 28px rgb(67 20 160 / 14%);
+		will-change: transform;
+	}
+
+	.gatherly-event-stage {
+		perspective: 1100px;
+		padding: 0.4rem 0.35rem 1.2rem;
+	}
+
+	.gatherly-event-stage > div {
+		min-width: 0;
+		transform-style: preserve-3d;
+	}
+
+	.gatherly-event-card::before,
+	.gatherly-event-card::after {
+		position: absolute;
+		z-index: -1;
+		border-radius: inherit;
+		content: '';
+		pointer-events: none;
+	}
+
+	.gatherly-event-card::before {
+		inset: 0.35rem -0.35rem -0.35rem 0.35rem;
+		background: linear-gradient(135deg, #d9b8f4, #a5e9f1);
+		transform: translateZ(-10px);
+	}
+
+	.gatherly-event-card::after {
+		inset: 0.7rem -0.7rem -0.7rem 0.7rem;
+		background: rgb(223 185 248 / 45%);
+		transform: translateZ(-20px);
+	}
+
+	.gatherly-event-card-2 { transform: translateY(0.5rem) rotateZ(0.8deg); }
+	.gatherly-event-card-3 { transform: translateY(-0.25rem) rotateZ(-0.7deg); }
+	.gatherly-event-card-4 { transform: translateY(0.7rem) rotateZ(0.6deg); }
+
+	.gatherly-event-card img {
+		transition: transform 500ms cubic-bezier(.2,.8,.2,1), filter 500ms ease;
+	}
+
+	.gatherly-event-card:hover img {
+		transform: scale(1.1) rotate(1deg);
+		filter: saturate(1.15) contrast(1.04);
+	}
+
+	.gatherly-event-card:hover {
+		box-shadow: 0 18px 0 -5px rgb(167 126 224 / 45%), 0 24px 34px rgb(67 20 160 / 22%), 0 0 18px rgb(110 228 255 / 35%);
+	}
+
+	.gatherly-footer {
+		background: #24113f;
+		color: #efe7fb;
+	}
+
+	.gatherly-footer-grid {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 2rem;
+	}
+
+	.gatherly-footer-grid h2 {
+		margin-bottom: 1.1rem;
+		font-size: 0.95rem;
+		font-weight: 800;
+		color: #ffffff;
+	}
+
+	.gatherly-footer-grid nav {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.55rem;
+	}
+
+	.gatherly-footer-grid a {
+		font-size: 0.78rem;
+		line-height: 1.25;
+		color: #d6c9e8;
+		transition: color 160ms ease, transform 160ms ease;
+	}
+
+	.gatherly-footer-grid a:hover {
+		color: #ffffff;
+		transform: translateX(3px);
+	}
+
+	.gatherly-how-it-works {
+		margin-top: 3rem;
+		padding: 2rem 1rem 2.5rem;
+		border-top: 1px solid #eee4f8;
+		border-radius: 1.5rem;
+		background: linear-gradient(135deg, #fffaff, #f7f0ff 48%, #f0fbff);
+	}
+
+	.gatherly-steps-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.8rem;
+		margin-top: 1.5rem;
+	}
+
+	.gatherly-roadmap {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: clamp(1rem, 4vw, 3rem);
+		margin-top: 2.5rem;
+		padding: 3.5rem 1rem 2rem;
+	}
+
+	.gatherly-roadmap-line {
+		position: absolute;
+		top: 50%;
+		left: 8%;
+		right: 8%;
+		height: 0.3rem;
+		border-radius: 999px;
+		background: linear-gradient(90deg, #8eeef5, #b590ee, #ffacd6);
+		box-shadow: 0 0 12px rgb(153 153 255 / 35%);
+		transform: translateY(-50%);
+	}
+
+	.gatherly-roadmap-line::after {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		height: 0.8rem;
+		width: 0.8rem;
+		border-radius: 999px;
+		background: #fff;
+		box-shadow: 0 0 0 4px #9a77dd, 0 0 14px #c9a9ff;
+		content: '';
+		transform: translate(-50%, -50%);
+		animation: gatherly-roadmap-pulse 2.2s ease-in-out infinite;
+	}
+
+	.gatherly-roadmap-step {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.75rem;
+		text-align: center;
+	}
+
+	.gatherly-roadmap-step-1,
+	.gatherly-roadmap-step-3 {
+		transform: translateY(-2.8rem);
+	}
+
+	.gatherly-roadmap-step-2 {
+		transform: translateY(2.8rem);
+	}
+
+	.gatherly-roadmap-node {
+		display: flex;
+		height: 4.5rem;
+		width: 4.5rem;
+		align-items: center;
+		justify-content: center;
+		border: 5px solid #fff;
+		border-radius: 999px;
+		background: linear-gradient(135deg, #c6fbff, #efc6f1);
+		font-size: 2rem;
+		box-shadow: 0 0 0 3px #c6a7ef, 0 7px 18px rgb(114 80 207 / 18%);
+	}
+
+	.gatherly-roadmap-copy {
+		max-width: 14rem;
+		border-radius: 1rem;
+		background: rgb(255 255 255 / 86%);
+		padding: 0.8rem 1rem;
+		box-shadow: 0 4px 14px rgb(114 80 207 / 9%);
+	}
+
+	.gatherly-roadmap-copy h3 {
+		margin-top: 0.25rem;
+		font-size: 1rem;
+		font-weight: 900;
+		color: #341257;
+	}
+
+	.gatherly-roadmap-copy p:last-child {
+		margin-top: 0.3rem;
+		font-size: 0.75rem;
+		line-height: 1.45;
+		color: #65616d;
+	}
+
+	@keyframes gatherly-roadmap-pulse {
+		0%, 100% { left: 0%; opacity: 0.65; }
+		50% { left: 100%; opacity: 1; }
+	}
+
+	.gatherly-step-card {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.75rem;
+		border: 1px solid #dfcdf5;
+		border-radius: 1rem;
+		background: rgb(255 255 255 / 82%);
+		padding: 1rem;
+		box-shadow: 0 3px 10px rgb(114 80 207 / 8%);
+	}
+
+	.gatherly-step-emoji {
+		display: flex;
+		height: 2.5rem;
+		width: 2.5rem;
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+		border-radius: 999px;
+		background: linear-gradient(135deg, #c7fbff, #f4c9ef);
+		font-size: 1.35rem;
+	}
+
+	.gatherly-feedback {
+		margin-top: 3rem;
+		padding: 2.5rem 0 3rem;
+		font-family: Arial, sans-serif;
+	}
+
+	.gatherly-feedback-intro {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+		gap: 3rem;
+		align-items: start;
+		margin-bottom: 2.5rem;
+	}
+
+	.gatherly-feedback-intro h2 {
+		font-size: clamp(1.75rem, 4vw, 2.4rem);
+		font-weight: 900;
+		line-height: 1.05;
+		color: #292733;
+	}
+
+	.gatherly-feedback-intro p {
+		max-width: 31rem;
+		padding-top: 0.35rem;
+		font-size: 0.95rem;
+		line-height: 1.65;
+		color: #5f5b68;
+	}
+
+	.gatherly-feedback-controls {
+		display: flex;
+		gap: 0.5rem;
+		margin-top: 1rem;
+	}
+
+	.gatherly-feedback-controls button {
+		display: flex;
+		height: 2.35rem;
+		width: 2.35rem;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid #d7c6ef;
+		border-radius: 999px;
+		background: #fff;
+		font-size: 1.15rem;
+		color: #55338c;
+		transition: transform 160ms ease, background 160ms ease;
+	}
+
+	.gatherly-feedback-controls button:hover {
+		background: #f2eaff;
+		transform: scale(1.08);
+	}
+
+	.gatherly-feedback-viewport {
+		position: relative;
+		min-height: 20rem;
+		overflow: hidden;
+		margin-top: 1rem;
+		border-radius: 1.75rem;
+	}
+
+	.gatherly-feedback-page {
+		display: grid;
+		grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+		align-items: center;
+		gap: clamp(2rem, 7vw, 7rem);
+		min-height: 20rem;
+		padding: 2.5rem clamp(1.5rem, 7vw, 7rem);
+		border-radius: inherit;
+		cursor: grab;
+		user-select: none;
+	}
+
+	.gatherly-feedback-page:active { cursor: grabbing; }
+	.gatherly-feedback-peach { background: linear-gradient(110deg, #fff7f2, #ffe8dc 55%, #fff3f8); }
+	.gatherly-feedback-cyan { background: linear-gradient(110deg, #f0ffff, #daf6fb 55%, #f2ecff); }
+	.gatherly-feedback-purple { background: linear-gradient(110deg, #f8f0ff, #eadbff 55%, #f3f0ff); }
+
+	.gatherly-feedback-page .gatherly-feedback-image-wrap {
+		height: 15rem;
+		width: 100%;
+		border: 0;
+		padding: 0;
+		box-shadow: 0 10px 0 #ffae91;
+		cursor: pointer;
+	}
+
+	.gatherly-feedback-cyan .gatherly-feedback-image-wrap { box-shadow: 0 10px 0 #8bdff1; }
+	.gatherly-feedback-purple .gatherly-feedback-image-wrap { box-shadow: 0 10px 0 #c0a0ff; }
+
+	.gatherly-feedback-page-copy h3 {
+		margin-top: 0.6rem;
+		font-size: clamp(1.5rem, 3vw, 2.35rem);
+		font-weight: 900;
+		line-height: 1.08;
+		color: #292733;
+	}
+
+	.gatherly-feedback-page-copy > p:not(.gatherly-feedback-page-number) {
+		margin-top: 0.8rem;
+		font-size: 1rem;
+		line-height: 1.6;
+		color: #65616d;
+	}
+
+	.gatherly-feedback-page-number,
+	.gatherly-feedback-page-copy > span {
+		font-size: 0.75rem;
+		font-weight: 800;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #8a5bd3;
+	}
+
+	.gatherly-feedback-page-copy > span {
+		display: inline-block;
+		margin-top: 1.25rem;
+		letter-spacing: 0;
+		text-transform: none;
+	}
+
+	.gatherly-feedback-dots {
+		display: flex;
+		justify-content: center;
+		gap: 0.45rem;
+		margin-top: 1rem;
+	}
+
+	.gatherly-feedback-dots button {
+		height: 0.45rem;
+		width: 0.45rem;
+		border-radius: 999px;
+		background: #d6c5ea;
+		transition: width 180ms ease, background 180ms ease;
+	}
+
+	.gatherly-feedback-dots button[aria-current='true'] {
+		width: 1.5rem;
+		background: #7250cf;
+	}
+
+	.gatherly-feedback-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1.25rem;
+	}
+
+	.gatherly-feedback-card {
+		position: relative;
+	}
+
+	.gatherly-feedback-image-wrap {
+		position: relative;
+		height: 10.5rem;
+		overflow: hidden;
+		border-radius: 1.5rem;
+		background: #eee;
+	}
+
+	.gatherly-feedback-image-wrap::after {
+		position: absolute;
+		inset: 0;
+		content: '';
+		border: 7px solid transparent;
+		border-radius: inherit;
+		pointer-events: none;
+	}
+
+	.gatherly-feedback-image-wrap img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		transition: transform 500ms ease;
+	}
+
+	.gatherly-feedback-card:hover img {
+		transform: scale(1.05);
+	}
+
+	.gatherly-feedback-peach .gatherly-feedback-image-wrap { box-shadow: -8px 8px 0 #ffae91; }
+	.gatherly-feedback-cyan .gatherly-feedback-image-wrap { box-shadow: -8px 8px 0 #8bdff1; }
+	.gatherly-feedback-purple .gatherly-feedback-image-wrap { box-shadow: -8px 8px 0 #c0a0ff; }
+
+	.gatherly-feedback-card h3 {
+		margin-top: 1.7rem;
+		font-size: 1.1rem;
+		font-weight: 900;
+		line-height: 1.18;
+		color: #292733;
+	}
+
+	.gatherly-feedback-card p {
+		margin-top: 0.6rem;
+		font-size: 0.9rem;
+		line-height: 1.55;
+		color: #65616d;
+	}
+
+	.gatherly-popular-events {
+		margin-top: 2rem;
+		padding: 1.5rem 0 3rem;
+	}
+
+	.gatherly-popular-heading {
+		display: flex;
+		align-items: end;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	.gatherly-carousel-controls {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.gatherly-carousel-controls button {
+		display: flex;
+		height: 2.35rem;
+		width: 2.35rem;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid #d7c6ef;
+		border-radius: 999px;
+		background: #fff;
+		font-size: 1.15rem;
+		color: #55338c;
+		transition: transform 160ms ease, background 160ms ease;
+	}
+
+	.gatherly-carousel-controls button:hover {
+		background: #f2eaff;
+		transform: scale(1.08);
+	}
+
+	.gatherly-carousel-viewport {
+		position: relative;
+		min-height: 230px;
+		margin-top: 1rem;
+		overflow: hidden;
+		border-radius: 2rem;
+	}
+
+	.gatherly-carousel-slide {
+		display: flex;
+		min-height: 230px;
+		align-items: center;
+		justify-content: center;
+		gap: clamp(2rem, 9vw, 9rem);
+		border-radius: 2rem;
+		padding: 2.5rem clamp(2rem, 8vw, 8rem);
+		cursor: grab;
+		user-select: none;
+	}
+
+	.gatherly-carousel-slide:active { cursor: grabbing; }
+	.gatherly-carousel-pink { background: linear-gradient(110deg, #ffd5e9, #fff1f8 52%, #f2d7ff); }
+	.gatherly-carousel-purple { background: linear-gradient(110deg, #ead7ff, #fff4ff 52%, #d9f2ff); }
+	.gatherly-carousel-cyan { background: linear-gradient(110deg, #cefaff, #f4ffff 52%, #e5d8ff); }
+
+	.gatherly-carousel-art {
+		display: flex;
+		height: 9rem;
+		width: 9rem;
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		background: rgb(255 255 255 / 72%);
+		font-size: 5rem;
+		box-shadow: 0 0 0 12px rgb(255 255 255 / 38%), 0 0 32px rgb(173 112 229 / 28%);
+	}
+
+	.gatherly-carousel-copy {
+		min-width: 14rem;
+	}
+
+	.gatherly-carousel-copy h3 {
+		margin-top: 0.5rem;
+		font-size: clamp(1.8rem, 4vw, 3rem);
+		font-weight: 900;
+		line-height: 1;
+		color: #341257;
+	}
+
+	.gatherly-carousel-copy > p:not(.text-xs) {
+		margin-top: 0.75rem;
+		font-size: 1rem;
+		color: #5f5570;
+	}
+
+	.gatherly-carousel-link {
+		margin-top: 1.25rem;
+		font-size: 0.8rem;
+		font-weight: 800;
+		color: #7250cf;
+	}
+
+	.gatherly-carousel-dots {
+		display: flex;
+		justify-content: center;
+		gap: 0.45rem;
+		margin-top: 1rem;
+	}
+
+	.gatherly-carousel-dots button {
+		height: 0.45rem;
+		width: 0.45rem;
+		border-radius: 999px;
+		background: #d6c5ea;
+		transition: width 180ms ease, background 180ms ease;
+	}
+
+	.gatherly-carousel-dots button[aria-current='true'] {
+		width: 1.5rem;
+		background: #7250cf;
+	}
+
+	@media (max-width: 767px) {
+		.gatherly-hero {
+			min-height: 250px;
+		}
+
+		.gatherly-content {
+			width: 100%;
+			padding-inline: 1rem;
+		}
+
+		.gatherly-nav-label {
+			display: none;
+		}
+
+		.gatherly-nav-icon,
+		.gatherly-create-event {
+			padding: 0.5rem;
+		}
+
+		.gatherly-steps-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.gatherly-roadmap {
+			grid-template-columns: 1fr;
+			gap: 1.2rem;
+			padding: 1rem 0;
+		}
+
+		.gatherly-roadmap-line {
+			top: 1.5rem;
+			bottom: 1.5rem;
+			left: 2.2rem;
+			right: auto;
+			height: auto;
+			width: 0.3rem;
+			transform: none;
+		}
+
+		.gatherly-roadmap-step,
+		.gatherly-roadmap-step-1,
+		.gatherly-roadmap-step-2,
+		.gatherly-roadmap-step-3 {
+			min-height: 5.5rem;
+			flex-direction: row;
+			transform: none;
+			text-align: left;
+		}
+
+		.gatherly-roadmap-copy {
+			max-width: none;
+			flex: 1;
+		}
+
+		.gatherly-feedback-intro,
+		.gatherly-feedback-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.gatherly-feedback-intro {
+			gap: 1rem;
+			margin-bottom: 2rem;
+		}
+
+		.gatherly-feedback-page {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+			padding: 1.5rem;
+			text-align: center;
+		}
+
+		.gatherly-feedback-page .gatherly-feedback-image-wrap {
+			height: 13rem;
+		}
+
+		.gatherly-feedback-controls {
+			justify-content: flex-start;
+		}
+
+		.gatherly-footer-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 2rem 1rem;
+		}
+
+		.gatherly-carousel-slide {
+			min-height: 270px;
+			flex-direction: column;
+			gap: 1.5rem;
+			padding: 2rem 1.25rem;
+			text-align: center;
+		}
+
+		.gatherly-carousel-copy {
+			min-width: 0;
+		}
+	}
+}
